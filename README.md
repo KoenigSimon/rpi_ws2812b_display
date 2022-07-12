@@ -15,10 +15,13 @@ Put in the configuration for the LEDs there and if you are working with 8x8 matr
 ### Running the script
 You will need about 3 shh sessions to get going. Run the following 3 commands in seperate sessions.
 - The Virtual display in the desired resolution, specified as WIDTHxHEIGHTxDEPTH where depth must be 24bit. It will need a folder to put the shared framebuffer file into.
-    `Xvfb :0 -screen 0 24x16x24 -fbdir ./frameBuffer`
+`Xvfb :0 -screen 0 24x16x24 -fbdir ./frameBuffer`
+
 - The display engine itself. It will read the framebuffer and write the output to the LED Matrices.
-    `sudo python3 ./display_engine`
+`sudo python3 ./display_engine`
+
 - An application to test is also included.
-    `DISPLAY=:0 python3 draw_cube.py`
+`DISPLAY=:0 python3 draw_cube.py`
+
 - For debug purposes you can export a screenshot of the virtual screen. It just sometimes cannot handle the bit depth.
-    `xwd -display :0 -root | xwdtopnm | pnmtopng > Screenshot.png`
+`xwd -display :0 -root | xwdtopnm | pnmtopng > Screenshot.png`
