@@ -20,9 +20,9 @@ You will need about 3 shh sessions to get going. Run the following 3 commands in
 
 - The display engine itself. It will read the framebuffer and write the output to the LED Matrices.
 
-`sudo python3 ./display_engine`
+`sudo python3 ./display_engine.py`
 
-- An application to test is also included.
+- An application to test is also included. (It can be terminated with ctrl+z instead of crtl+c)
 
 `DISPLAY=:0 python3 draw_cube.py`
 
